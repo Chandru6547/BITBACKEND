@@ -18,5 +18,6 @@ app.get('/querycheck', (req, res) => {
     console.log(req.query);
     res.send("Query Params Checked");
 })
+//http://localhost:3000/querycheck?name=chandru&dept=ece
 
 app.listen(3000);
