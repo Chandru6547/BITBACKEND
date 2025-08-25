@@ -51,4 +51,18 @@ function deleteStudent(req, res) {
     }
 }
 
-module.exports = { getStudentByRollNo, insertdata, deleteStudent, getAllStudents };
+function editStudent(req, res) {
+    let rollNo = req.body.rollNo;
+    let index = data.findIndex(s => s.rollNo === rollNo);
+    if (index !== -1) {
+        data[index] = req.body;
+        res.send("Student Updated");
+    } else {
+        res.status(404).send("Student Not Found");
+    }
+}
+
+module.exports =
+ { getStudentByRollNo, insertdata, deleteStudent, getAllStudents, 
+    editStudent
+ };
